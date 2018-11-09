@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public abstract class Entity
 {
     int nodeNumber;
@@ -13,6 +15,7 @@ public abstract class Entity
         int currentNode = p.getDest();
         int sourceNode = p.getSource();
         boolean sendFlag = false;
+        System.out.println("Current Distance vector of node " + nodeNumber + " is " + Arrays.toString(getDistanceVector()));
         for (int i=0; i < NetworkSimulator.NUMENTITIES; i++) {
             int mincost = p.getMincost(i);
             int viaNeighbourDistance = mincost+NetworkSimulator.cost[sourceNode][currentNode];
@@ -35,6 +38,7 @@ public abstract class Entity
         }
         if (sendFlag) {
             System.out.println("Node " + p.getDest() + " says: my distance vector got updated so sending it to my neighbours");
+            System.out.println("Updated Distance vector of node " + nodeNumber + " is " + Arrays.toString(getDistanceVector()));
             sendToNeighbours();
         } else {
             System.out.println("Node " + p.getDest() + " says: my distance vector did not update");
