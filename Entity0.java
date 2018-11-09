@@ -5,17 +5,7 @@ public class Entity0 extends Entity
     {
         nodeNumber = 0;
         neighbours = new int[]{1,2,3};
-        for (int i=0; i < this.distanceTable.length; i++) {
-            for (int j=0; j < this.distanceTable.length; j++) {
-                if (j==nodeNumber) {
-                    distanceTable[i][j] = NetworkSimulator.cost[j][i];
-                } else {
-                    distanceTable[i][j] = 999;
-                }
-            }
-        }
-        sendToNeighbours(); 
-        printDT();
+        initializeDistanceTable();
     }
     
     // Handle updates when a packet is received.  Students will need to call
