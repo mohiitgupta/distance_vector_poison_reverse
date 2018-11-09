@@ -30,10 +30,6 @@ public abstract class Entity
             if (distanceTable[i][currentNode] != oldValue) {
                 sendFlag = true;
             }
-            // if (distanceTable[i][currentNode] > viaNeighbourDistance) {
-            //     sendFlag = true;
-            //     distanceTable[i][currentNode] = viaNeighbourDistance;
-            // }
             
         }
         if (sendFlag) {
