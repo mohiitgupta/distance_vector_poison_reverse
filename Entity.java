@@ -70,4 +70,18 @@ public abstract class Entity
 
     }
 
+    protected void initializeDistanceTable() {
+        for (int i=0; i < this.distanceTable.length; i++) {
+            for (int j=0; j < this.distanceTable.length; j++) {
+                if (j==nodeNumber) {
+                    distanceTable[i][j] = NetworkSimulator.cost[j][i];
+                } else {
+                    distanceTable[i][j] = 999;
+                }
+            }
+        }
+        sendToNeighbours(); 
+        printDT();
+    }
+
 }
