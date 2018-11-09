@@ -34,7 +34,7 @@ public class Entity3 extends Entity
     public void printDT()
     {
         System.out.println("         via");
-        System.out.println(" D3 |   0   1   2   3");
+        System.out.println(" D3 |   0   2");
         System.out.println("----+--------");
         for (int i = 0; i < NetworkSimulator.NUMENTITIES; i++)
         {
@@ -44,7 +44,7 @@ public class Entity3 extends Entity
             }
             
             System.out.print("   " + i + "|");
-            for (int j = 0; j < NetworkSimulator.NUMENTITIES; j ++)
+            for (int j = 0; j < NetworkSimulator.NUMENTITIES; j +=2)
             {
                
                 if (distanceTable[i][j] < 10)

@@ -31,7 +31,7 @@ public class Entity2 extends Entity
     {
         System.out.println();
         System.out.println("           via");
-        System.out.println(" D2 |   0   1   2   3");
+        System.out.println(" D2 |   0   1   3");
         System.out.println("----+------------");
         for (int i = 0; i < NetworkSimulator.NUMENTITIES; i++)
         {
@@ -45,7 +45,7 @@ public class Entity2 extends Entity
             {
                 if (j == 2)
                 {
-                    // continue;
+                    continue;
                 }
                 
                 if (distanceTable[i][j] < 10)
