@@ -19,6 +19,9 @@ public abstract class Entity
         for (int i=0; i < NetworkSimulator.NUMENTITIES; i++) {
             int mincost = p.getMincost(i);
             int viaNeighbourDistance = mincost+NetworkSimulator.cost[sourceNode][currentNode];
+            if (viaNeighbourDistance > 999) {
+                viaNeighbourDistance = 999;
+            }
             distanceTable[i][sourceNode] = viaNeighbourDistance;
             int oldValue = distanceTable[i][currentNode];
             distanceTable[i][currentNode] = NetworkSimulator.cost[i][currentNode];
